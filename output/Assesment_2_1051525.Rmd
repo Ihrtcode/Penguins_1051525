@@ -1,0 +1,49 @@
+---
+title: "Penguins_assesment"
+output: html_document
+editor_options: 
+  chunk_output_type: inline
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+options(warn=-1)
+```
+
+## Penguins
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r, echo = FALSE, include = FALSE}
+source("scripts/import_clean.r")
+source("scripts/import_image.r")
+source("scripts/analysis.r")
+source("scripts/badplot.r")
+source("scripts/penguinplot1.r")
+
+```
+
+
+```{r badplot}
+badplot
+```
+
+
+```{r}
+#analysis
+analysis1
+analysis2
+```
+
+## Scale-location plot
+The line is roughly horizontal line with a minor positive and no major deviations;  the points are also relatively evenly spread, suggesting acceptable homogeneity with no violation of equal variance. 
+
+## Normal Q-Q plot
+Points fall roughly along the straight diagonal line, with minor tailing off at either end, however, this does not violate the assumption that the residuals are normally distributed
+
+```{r penguinplot1, message = FALSE}
+#plot graph and save to as pdf in figures
+penguinplot1
+```

@@ -1,0 +1,39 @@
+---
+title: "Assesment_2.2_1051525"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE)
+options(warn=-1)
+```
+# Penguin submission
+```{r pressure, echo=FALSE, include = FALSE}
+source("scripts/import_clean.r")
+source("scripts/analysis.r")
+source("scripts/penguinplot1.r")
+```
+## Analysis of model
+```{r}
+#analysis
+analysis1
+
+```
+
+### Normal Q-Q plot
+Points fall roughly along the straight diagonal line, with minor tailing off at either end, however, this does not violate the assumption that the residuals are normally distributed
+```{r, }
+analysis2
+```
+
+### Scale-location plot
+The line is roughly horizontal line with a minor positive and no major deviations;  the points are also relatively evenly spread, suggesting acceptable homogeneity with no violation of equal variance.
+
+
+
+```{r penguinplot1, message = FALSE}
+#plot graph and save to as pdf in figures
+penguinplot1
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
