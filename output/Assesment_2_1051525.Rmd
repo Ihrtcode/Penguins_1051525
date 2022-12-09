@@ -1,5 +1,5 @@
 ---
-title: "Penguins_assesment_1051525"
+title: "Penguins_assessment_1051525"
 output: html_document
 editor_options: 
   chunk_output_type: inline
@@ -10,9 +10,9 @@ knitr::opts_chunk$set(echo = TRUE)
 options(warn=-1)
 ```
 
-####URL link to Github repository:
+#### URL link to Github repository:
 
-
+https://github.com/Ihrtcode/Penguins_1051525
 
 
 ### Reproducibility crisis
@@ -93,19 +93,19 @@ Timothy B. Plante MD, M. C. (2020). Choosing color palettes for scientific figur
 ## Statistical test and plot 
 
 ### Diagnostic plots
-```{r, echo = FALSE}
+```{r, echo = FALSE, message=FALSE}
 analysis1
 ```
 
 #### Normal Q-Q plot
 Points fall roughly along the straight diagonal line, with minor tailing off at either end, however, this does not violate the assumption that the residuals are normally distributed
 
-```{r, echo=FALSE}
+```{r, echo=FALSE, message=FALSE}
 analysis2
 ```
 
 #### Scale-location plot
-The line is roughly horizontal line with a minor positive and no major deviations;  the points are also relatively evenly spread, suggesting acceptable homogeneity with no violation of equal variance. 
+The line is roughly horizontal line with a deviation at the right end;  the points are  relatively evenly spread, suggesting acceptable homogeneity with no significant violation of equal variance. 
 
 ### ANOVA statistical test
 ##### ANOVA table
@@ -126,13 +126,17 @@ https://github.com/anonymousoxstudent/penguins/blob/main/penguin2.R
 The code is clearly split into distinct, labelled sections. Within each section most functions and other lines of code have been annotated, making the code logical and easy to follow. 
 When I attempted to run the code, there were a couple of errors that arose. Firstly, as instructed I added my own working directory. However, there was then an error with write.csv function as no file was found.
 However, as penguins_raw is part of the palmerpenguins package, the write.csv function isn’t necessary and the code runs regardless. This made subsequent functions such as dir.create() redundant. 
+
 The code runs smoothly, with all expected outputs until line 101 where the plot_grid function isn’t recognised. Once I edited the code to load the cowplot packge, which wasn’t in the library, the plot_grid function ran without errors, and the object total_plot was created. 
 The figure then successfully saved to the figures folder of my chosen working directory as an SVG file.
 The final figure produced penguins_vector.svg is clear, with 2 separate graphs for both male and female penguins. However, the scale of both axis of the graph varies between the 2 plots, which may be misleading. Additionally, a figure caption or annotation within the R document explaining how the  statistical test links to the graph would be informative. 
+
 To make the code more understandable it would be beneficial to convert it into Rmarkdown file which can produce a clean output with only the necessary information displayed. This would increase focus on the statistical test and final figure. Additionally, they would benefit from using the source function and multiple files for functions, plots, and figures to reduce the volume of code on the main output document, allowing each of these parts to be easily run separately, making it easier to identify errors and edit.
+
 The code is relatively easy to edit due to the thorough annotations, however, it would be significantly easier if it were split into separate files which could be sourced into the main output document as described above. This way smaller sections could be run independently and the one could make test scripts to easily run only specific functions from the sourced files at a time. 
 
 My partner suggested adding the setwd() fucntion so one can easily connect the working directory to where the files are, and smoothly source the functions as they could not run the code without this. They suggested that having all the code in the same Rmd file would make it easier to download and run from Github. I agree with the working directory amendment, however, I believe sourcing of different files should make the code more reproducible as it is easier to edit, especially when working with longer scripts and analyses. 
+
 My main takeaway for writing code for others is the value of detailed annotation as whilst I could not originally run my partners code, their annotation made it easy for me to understand and edit. Ordering code logically and dividing it into clear sections are also important for reproducibility.
 
 
